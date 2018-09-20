@@ -9,12 +9,14 @@ public class currencyConverter {
 
         do {
             pounds = getValue();
-            displayResults();
+            if (pounds != 0) {
+                displayResults(pounds);
+            }
         }while(pounds != 0);
 
     }
 
-    public static void getExchangeRate(){
+    private static void getExchangeRate(){
         rate = Float.parseFloat(JOptionPane.showInputDialog(null, "Please enter the exchange rate for GB£ to Euro"));
     }
 
@@ -24,6 +26,8 @@ public class currencyConverter {
     }
 
     public static void displayResults(float pds){
+        JOptionPane.showMessageDialog(null, "GB£ : "+ pds + "\nEuro : " + pds*rate,
+                "Pounds to Euro using Rate of " + rate, 1 );
 
     }
 
