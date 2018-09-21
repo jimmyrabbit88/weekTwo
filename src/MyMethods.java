@@ -20,4 +20,16 @@ public class MyMethods {
         box1.setFont(new Font("monospaced", Font.PLAIN, 12));
         return box1;
     }
+
+    public static int inputInt(String str){
+        int val;
+        val = Integer.parseInt(JOptionPane.showInputDialog(null, str));
+        return val;
+    }
+
+    public static int getCubeOf(int num){
+        num = num*num*num;
+        return num;
+    }
+
 }
