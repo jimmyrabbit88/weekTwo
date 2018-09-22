@@ -8,6 +8,7 @@ public class ArratAlgs {
 
         listWeights(weights);
         under(MyMethods.inputInt("Show the number of cattle under this weight"), weights);
+        percentageOver(MyMethods.inputInt("Show the percentage of cattle over this weight"), weights);
 
         JOptionPane.showMessageDialog(null, box);
     }
@@ -28,6 +29,19 @@ public class ArratAlgs {
             }
         }
         box.append(("\nNumber under " + num + " kg: " + counter));
+
+    }
+
+    public static void percentageOver(int num, double[] weights){
+        int counter=0;
+        float percent=0f;
+        for(int i=0; i<weights.length; i++){
+            if (weights[i] >= num){
+                counter++;
+            }
+        }
+        percent = (100f/weights.length)*counter;
+        box.append(("\nPercentage of cattle weighing at least " + num + " kg: " + percent + "%"));
 
     }
 }
