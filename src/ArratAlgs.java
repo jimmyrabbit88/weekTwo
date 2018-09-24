@@ -9,6 +9,8 @@ public class ArratAlgs {
         listWeights(weights);
         under(MyMethods.inputInt("Show the number of cattle under this weight"), weights);
         percentageOver(MyMethods.inputInt("Show the percentage of cattle over this weight"), weights);
+        lightestAnimal(weights);
+        avgWeight(weights);
 
         JOptionPane.showMessageDialog(null, box);
     }
@@ -28,7 +30,7 @@ public class ArratAlgs {
                 counter++;
             }
         }
-        box.append(("\nNumber under " + num + " kg: " + counter));
+        box.append("\nNumber under " + num + " kg: " + counter);
 
     }
 
@@ -41,7 +43,33 @@ public class ArratAlgs {
             }
         }
         percent = (100f/weights.length)*counter;
-        box.append(("\nPercentage of cattle weighing at least " + num + " kg: " + percent + "%"));
+        box.append("\nPercentage of cattle weighing at least " + num + " kg: " + percent + "%");
 
     }
+
+    public static void lightestAnimal(double[] weights){
+        double lightestAnimal = 0;
+
+        for(int i=0;i<weights.length; i++){
+            if (i==0){
+                lightestAnimal = weights[i];
+            }
+            if (weights[i] < lightestAnimal){
+                lightestAnimal = weights[i];
+            }
+        }
+        box.append("\nLightest Animal: " + lightestAnimal + " kg");
+    }
+
+    public static void avgWeight (double[] weights){
+        double adder = 0;
+        for (int i=0; i<weights.length; i++){
+            adder += weights[i];
+        }
+        box.append("\nAverage weight: " + (adder/weights.length) + " kg");
+    }
+
+
+
+
 }
