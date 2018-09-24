@@ -66,7 +66,7 @@ public class ArratAlgs {
         for (int i=0; i<weights.length; i++){
             adder += weights[i];
         }
-        box.append("\nAverage weight: " + (adder/weights.length) + " kg");
+        box.append("\nAverage weight: " + String.format("%.1f",(adder/weights.length)) + " kg");
     }
 
 
